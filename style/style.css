@@ -1,0 +1,63 @@
+p {
+	font-family: Arial, Helvetica, sans-serif;
+}
+/* Greetings */
+
+#greetings {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+	opacity: 1;
+}
+
+#greetings-text {
+	font-size: 48px;
+	color: black;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.button {
+	padding: 70px 50px;
+	border-radius: 50px;
+	background-color: #4c4c4c;
+	color: white;
+}
+
+.button:hover {
+	background-color: #dedede;
+	color: black;
+}
+
+/* Game */
+
+#content {
+	display: block;
+}
+
+#img-container {
+	display: flex;
+	justify-content: space-evenly;
+	padding-top: 200px;
+}
+
+img {
+	height: 250px;
+}
+
+.choses {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+#result-message {
+	font-size: 32px;
+	text-align: center;
+}
