@@ -1,6 +1,7 @@
 window.addEventListener('load', function () {
 	music.play();
 });
+
 // Geting elements
 const greetings = document.getElementById('greetings');
 const pickDiv = document.getElementById('pick-hand');
