@@ -1,21 +1,22 @@
+window.addEventListener('load', function () {
+	music.play();
+});
 // Geting elements
 const greetings = document.getElementById('greetings');
-const content = document.getElementById('content');
+const pickDiv = document.getElementById('pick-hand');
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const lesbian = document.getElementById('lesbian');
 
 document.getElementById('start-button').addEventListener('click', function () {
-	startGame(true);
+	startGame();
 });
 
 // Start
-function startGame(first) {
-	if (first) {
-		// Ocult greetings First Game
-		greetings.style.display = 'none';
-		content.style.display = 'block';
-	}
+function startGame() {
+	// Ocult greetings First Game
+	greetings.style.display = 'none';
+	pickDiv.style.display = 'block';
 
 	// Game
 	//    Calculate Result
@@ -85,17 +86,21 @@ function startGame(first) {
         <img src="./img/${results.number}.jpg">
       </div>
     </div>
-    <p id="result-message">${message}</p>
+    <p id="result-message" class="title">${message}</p>
     <div class="button" id="restart-button">Play Again</div>
     `;
-		resultsdiv.className = 'results-div';
+		resultsdiv.id = 'results-div';
 		document.body.appendChild(resultsdiv);
 		if (results.result === 1) {
 			document.getElementById('result-message').style.color = 'green';
 		} else if (results.result === 2) {
 			document.getElementById('result-message').style.color = 'red';
 		}
-		content.style.display = 'none';
+		pickDiv.style.display = 'none';
+		document.getElementById('restart-button').addEventListener('click', function () {
+			document.querySelector('#results-div').remove();
+			pickDiv.style.display = 'block';
+		});
 	}
 
 	// Events
@@ -110,4 +115,14 @@ function startGame(first) {
 	lesbian.addEventListener('click', function () {
 		gameAdmin(3);
 	});
+}
+
+const music = document.getElementById('music');
+
+function toggle() {
+	if (music.paused) {
+		music.play();
+	} else {
+		music.pause();
+	}
 }

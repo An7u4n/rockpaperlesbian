@@ -9,14 +9,27 @@
 	<body>
 		<div id="greetings">
 			<p id="greetings-text">¡¡WELCOME TO ROCK PAPER & LESBIAN GAME!!</p>
-			<div id="start-button" class="button">Click To Start The game</div>
+			<div id="start-button" class="button">START GAME</div>
 		</div>
-		<section id="content">
-			<p>Chose your weapon</p>
+		<section id="pick-hand">
+			<button onclick="toggle()">Music</button>
+			<audio id="music" loop>
+				<source src="music/ymiko.mp3" />
+			</audio>
+			<p class="title">Chose your weapon</p>
 			<div id="img-container">
-				<img src="./img/1.jpg" alt="rock" id="rock" />
-				<img src="./img/2.jpg" alt="paper" id="paper" />
-				<img src="./img/3.jpg" alt="Young Miko" id="lesbian" />
+				<div id="rock">
+					<p>ROCK</p>
+					<img src="./img/1.jpg" alt="rock" />
+				</div>
+				<div id="paper">
+					<p>PAPER</p>
+					<img src="./img/2.jpg" alt="paper" />
+				</div>
+				<div id="lesbian">
+					<p>LESBIAN</p>
+					<img src="./img/3.jpg" alt="Young Miko" />
+				</div>
 			</div>
 		</section>
 		<script src="script.js"></script>
